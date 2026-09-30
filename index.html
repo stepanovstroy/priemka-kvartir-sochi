@@ -71,27 +71,12 @@
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-              ],
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
               "opens": "08:00",
               "closes": "21:00"
             }
           ],
-          "areaServed": [
-            "Сочи",
-            "Адлер",
-            "Красная Поляна",
-            "Сириус",
-            "Хоста",
-            "Дагомыс"
-          ]
+          "areaServed": ["Сочи", "Адлер", "Красная Поляна", "Сириус", "Хоста", "Дагомыс"]
         },
         {
           "@type": "Service",
@@ -104,35 +89,6 @@
             "name": "Сочи"
           },
           "description": "Инструментальный аудит квартиры тепловизором, лазерными нивелирами и анемометром с формированием дефектного акта по ГОСТ и СНиП."
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Сколько стоит приёмка квартиры в Сочи?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Стоимость приёмки черновой отделки составляет 100 ₽/м² (мин. заказ 4 500 ₽), предчистовой White Box — 130 ₽/м², чистовой с ремонтом — 160 ₽/м². При заказе ремонта в STEPANOV STROY стоимость приёмки вычитается из сметы и становится полностью бесплатной."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Что входит в отчёт и дефектный акт?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "В день осмотра вы получаете официальный дефектовочный акт со ссылками на пункты СП, СНиП и ГОСТ с фотофиксацией нарушений геометрии стен, оконных блоков, электрики, сантехники и теплопотерь."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Какое оборудование используется при приёмке?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Мы используем только поверенное оборудование из Госреестра Росстандарта: тепловизоры Flir/Testo, 3D лазерные построители плоскостей, цифровые анемометры, тестеры розеток и УЗО, влагомеры."
-              }
-            }
-          ]
         }
       ]
     }
@@ -290,7 +246,7 @@
                 <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
             </a>
             <a href="#equipment" onclick="toggleMenu()" class="text-base sm:text-xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-2.5 group">
-                <span>04 // Поверенные приборы Росстандарта</span>
+                <span>04 // Приборы Госреестра</span>
                 <span class="text-xs text-neutral-600 group-hover:text-amber-500 group-hover:translate-x-1 transition-all">→</span>
             </a>
             <a href="#packages" onclick="toggleMenu()" class="text-base sm:text-xl font-title uppercase tracking-wider text-neutral-300 hover:text-amber-500 transition duration-300 flex items-center justify-between border-b border-neutral-900 pb-2.5 group">
@@ -326,6 +282,7 @@
         
         <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/95 z-10"></div>
+            <!-- ФОТО ГЛАВНОГО ЭКРАНА: deal.jpg -->
             <img src="deal.jpg" alt="Приёмка квартир в новостройках Сочи" class="w-full h-full object-cover grayscale opacity-45">
         </div>
 
@@ -385,6 +342,7 @@
                 
                 <div class="lg:col-span-5 lg:sticky lg:top-32 z-20">
                     <div class="bg-neutral-900 overflow-hidden border border-neutral-800 aspect-[3/4] max-w-sm mx-auto lg:mx-0 shadow-2xl relative rounded-none">
+                        <!-- ФОТО КИРИЛЛА: kirill.jpg -->
                         <img src="kirill.jpg" alt="Кирилл Степанов — руководитель технадзора Сочи" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-700">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-6">
                             <span class="text-white text-xl font-bold font-title block">Кирилл Степанов</span>
@@ -878,9 +836,9 @@
         }
         window.scrollTo(0, 0);
 
-        // ================= TELEGRAM BOT =================
+        // ================= НАСТРОЙКИ TELEGRAM БОТА =================
         const TELEGRAM_BOT_TOKEN = '8886167398:AAGfFNqnVCq_gwapNec3-cbNfx1KUwKiOyA';
-        const TELEGRAM_CHAT_ID = '7435043440';
+        const TELEGRAM_CHAT_ID = '7435043440'; // @dzhorg
 
         function escapeHtml(text) {
             if (!text) return '';
@@ -1005,7 +963,7 @@
             if (e.target === this) closeLeadModal();
         });
 
-        // ================= ОТПРАВКА ИЗ КАЛЬКУЛЯТОРА В TELEGRAM =================
+        // ================= ОТПРАВКА ИЗ КАЛЬКУЛЯТОРА В TELEGRAM (СЕГМЕНТИРОВАНО) =================
         async function handleModalFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('modalName').value.trim();
@@ -1019,21 +977,23 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            const htmlMsg = `📋 <b>ЗАЯВКА НА ПРИЁМКУ КВАРТИРЫ В СОЧИ!</b>\n\n` +
-                            `👤 <b>Имя:</b> ${escapeHtml(name)}\n` +
+            const htmlMsg = `🎯 <b>[ПРИЁМКА КВАРТИР СОЧИ] Заявка из калькулятора</b>\n` +
+                            `━━━━━━━━━━━━━━━━━━\n` +
+                            `👤 <b>Клиент:</b> ${escapeHtml(name)}\n` +
                             `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n` +
                             `🏢 <b>ЖК / Адрес:</b> ${escapeHtml(complex)}\n` +
                             `📐 <b>Площадь:</b> ${escapeHtml(area)} м²\n` +
-                            `🛠 <b>Тип отделки:</b> ${formatLabel.textContent}\n` +
-                            `💰 <b>Расчетная стоимость:</b> ${escapeHtml(estimate)}\n` +
-                            `⚡️ <i>STEPANOV STROY // ПРИЁМКА СОЧИ</i>`;
+                            `🛠 <b>Тариф:</b> ${escapeHtml(formatLabel.textContent)}\n` +
+                            `💰 <b>Расчет:</b> ${escapeHtml(estimate)}\n` +
+                            `━━━━━━━━━━━━━━━━━━\n` +
+                            `📍 <i>Источник: Калькулятор на сайте</i>`;
 
-            const plainMsg = `📋 ЗАЯВКА НА ПРИЁМКУ КВАРТИРЫ В СОЧИ!\n\nИмя: ${name}\nТелефон: ${phone}\nЖК: ${complex}\nПлощадь: ${area} м²\nТип: ${formatLabel.textContent}\nСтоимость: ${estimate}\nSTEPANOV STROY`;
+            const plainMsg = `🎯 [ПРИЁМКА КВАРТИР СОЧИ] Заявка из калькулятора\nИмя: ${name}\nТелефон: ${phone}\nЖК: ${complex}\nПлощадь: ${area} м²\nТариф: ${formatLabel.textContent}\nСумма: ${estimate}`;
 
             const ok = await sendToTelegram(htmlMsg, plainMsg);
 
             if (ok) {
-                statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Инженер свяжется с вами в течение 15 минут для бронирования времени.`;
+                statusDiv.textContent = `Спасибо, ${name}! Заявка принята. Инженер свяжется с вами в течение 15 минут.`;
                 statusDiv.classList.remove('hidden');
                 setTimeout(() => {
                     closeLeadModal();
@@ -1051,7 +1011,7 @@
             }
         }
 
-        // ================= ОТПРАВКА НИЖНЕЙ ФОРМЫ =================
+        // ================= ОТПРАВКА НИЖНЕЙ ФОРМЫ (СЕГМЕНТИРОВАНО) =================
         async function handleBottomFormSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('bottomName').value.trim();
@@ -1063,13 +1023,15 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'ОТПРАВКА...';
 
-            const htmlMsg = `⚡️ <b>БЫСТРАЯ ЗАПИСЬ НА ПРИЁМКУ В СОЧИ!</b>\n\n` +
-                            `👤 <b>Имя:</b> ${escapeHtml(name)}\n` +
+            const htmlMsg = `⚡️ <b>[ПРИЁМКА КВАРТИР СОЧИ] Быстрая запись на приёмку</b>\n` +
+                            `━━━━━━━━━━━━━━━━━━\n` +
+                            `👤 <b>Клиент:</b> ${escapeHtml(name)}\n` +
                             `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n` +
-                            `🏢 <b>ЖК:</b> ${escapeHtml(complex)}\n` +
-                            `⚡️ <i>STEPANOV STROY // ПРИЁМКА СОЧИ</i>`;
+                            `🏢 <b>ЖК / Адрес:</b> ${escapeHtml(complex)}\n` +
+                            `━━━━━━━━━━━━━━━━━━\n` +
+                            `📍 <i>Источник: Нижняя форма захвата</i>`;
 
-            const plainMsg = `⚡️ БЫСТРАЯ ЗАПИСЬ НА ПРИЁМКУ В СОЧИ!\n\nИмя: ${name}\nТелефон: ${phone}\nЖК: ${complex}\nSTEPANOV STROY`;
+            const plainMsg = `⚡️ [ПРИЁМКА КВАРТИР СОЧИ] Быстрая запись на приёмку\nИмя: ${name}\nТелефон: ${phone}\nЖК: ${complex}`;
 
             const ok = await sendToTelegram(htmlMsg, plainMsg);
 
