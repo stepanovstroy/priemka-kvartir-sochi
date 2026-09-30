@@ -89,6 +89,35 @@
             "name": "Сочи"
           },
           "description": "Инструментальный аудит квартиры тепловизором, лазерными нивелирами и анемометром с формированием дефектного акта по ГОСТ и СНиП."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Сколько стоит приёмка квартиры в Сочи?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Стоимость приёмки черновой отделки составляет 100 ₽/м² (мин. заказ 4 500 ₽), предчистовой White Box — 130 ₽/м², чистовой с ремонтом — 160 ₽/м². При заказе ремонта в STEPANOV STROY стоимость приёмки вычитается из сметы и становится полностью бесплатной."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Что входит в отчёт и дефектный акт?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "В день осмотра вы получаете официальный дефектовочный акт со ссылками на пункты СП, СНиП и ГОСТ с фотофиксацией нарушений геометрии стен, оконных блоков, электрики, сантехники и теплопотерь."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какое оборудование используется при приёмке?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Мы используем только поверенное оборудование из Госреестра Росстандарта: тепловизоры Flir/Testo, 3D лазерные построители плоскостей, цифровые анемометры, тестеры розеток и УЗО, влагомеры."
+              }
+            }
+          ]
         }
       ]
     }
@@ -277,57 +306,60 @@
         </div>
     </div>
 
-    <!-- ================= 1. HERO SECTION ================= -->
+    <!-- ================= 1. HERO SECTION (ОБНОВЛЕННЫЙ СВЕТЛЫЙ ФОН) ================= -->
     <section class="relative min-h-[100svh] w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 pt-28 sm:pt-32 pb-12 overflow-hidden bg-[#080808]">
         
+        <!-- ФОН С ВИДИМЫМ ФОТО И МЯГКИМ ГРАДИЕНТОМ -->
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/75 to-black/95 z-10"></div>
-            <!-- ФОТО ГЛАВНОГО ЭКРАНА: deal.jpg -->
-            <img src="deal.jpg" alt="Приёмка квартир в новостройках Сочи" class="w-full h-full object-cover grayscale opacity-45">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-[#080808] z-10"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(8,8,8,0.7)_100%)] z-10"></div>
+            
+            <!-- Полноцветное фото deal.jpg без серого фильтра -->
+            <img src="deal.jpg" alt="Приёмка квартир в новостройках Сочи" class="w-full h-full object-cover object-center brightness-100 contrast-105">
         </div>
 
         <div class="relative z-10 max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8 my-auto">
             
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-neutral-800 bg-[#0d0d0d]/90 text-[10px] sm:text-xs uppercase tracking-[0.25em] text-amber-500 rounded-none">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-neutral-800/80 bg-[#0d0d0d]/80 backdrop-blur-md text-[10px] sm:text-xs uppercase tracking-[0.25em] text-amber-500 rounded-none shadow-lg">
                 <span class="w-1.5 h-1.5 bg-amber-500 animate-pulse"></span>
                 <span>Независимый строительный технадзор в Сочи</span>
             </div>
 
-            <h1 class="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[1.08] max-w-4xl mx-auto drop-shadow-lg font-title">
+            <h1 class="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight uppercase leading-[1.08] max-w-4xl mx-auto font-title drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
                 <span class="block">Приёмка квартир</span>
-                <span class="block text-amber-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.35)]">в новостройках Сочи</span>
-                <span class="block text-2xl sm:text-4xl lg:text-5xl text-neutral-300 font-light mt-1">от застройщика</span>
+                <span class="block text-amber-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.4)]">в новостройках Сочи</span>
+                <span class="block text-2xl sm:text-4xl lg:text-5xl text-neutral-200 font-light mt-1">от застройщика</span>
             </h1>
 
-            <p class="text-xs sm:text-sm text-neutral-400 font-light max-w-2xl mx-auto leading-relaxed">
+            <p class="text-xs sm:text-sm text-neutral-200 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] bg-black/30 backdrop-blur-xs py-1 px-3">
                 Не подписывайте акт приёма-передачи вслепую! Проверим квартиру тепловизором и лазером, составим официальный дефектный акт по ГОСТ/СНиП и <strong class="text-white font-medium">сэкономим от 50 000 до 650 000 ₽</strong> на будущем ремонте.
             </p>
 
             <div class="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-10 w-full max-w-xs sm:max-w-3xl mx-auto pt-2">
-                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0d0d0d]/80 thin-border rounded-none">
+                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0c0c0c]/75 backdrop-blur-md thin-border rounded-none shadow-xl">
                     <span class="text-white text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none text-amber-500">
                         100%
                     </span>
-                    <span class="text-[8px] sm:text-[10px] text-neutral-400 uppercase tracking-widest leading-tight">ГОСТ и СНиП стандарты</span>
+                    <span class="text-[8px] sm:text-[10px] text-neutral-300 uppercase tracking-widest leading-tight">ГОСТ и СНиП стандарты</span>
                 </div>
                 
-                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0d0d0d]/80 thin-border rounded-none">
+                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0c0c0c]/75 backdrop-blur-md thin-border rounded-none shadow-xl">
                     <span class="text-white text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">
                         0 ₽
                     </span>
-                    <span class="text-[8px] sm:text-[10px] text-neutral-400 uppercase tracking-widest leading-tight">Бесплатно при ремонте</span>
+                    <span class="text-[8px] sm:text-[10px] text-neutral-300 uppercase tracking-widest leading-tight">Бесплатно при ремонте</span>
                 </div>
                 
-                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0d0d0d]/80 thin-border rounded-none">
+                <div class="flex flex-col items-center text-center space-y-1 p-3 sm:p-4 bg-[#0c0c0c]/75 backdrop-blur-md thin-border rounded-none shadow-xl">
                     <span class="text-white text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black font-title leading-none">
                         450+
                     </span>
-                    <span class="text-[8px] sm:text-[10px] text-neutral-400 uppercase tracking-widest leading-tight">Принятых квартир в Сочи</span>
+                    <span class="text-[8px] sm:text-[10px] text-neutral-300 uppercase tracking-widest leading-tight">Принятых квартир в Сочи</span>
                 </div>
             </div>
 
             <div class="w-full max-w-xs sm:max-w-md mx-auto pt-2">
-                <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-2xl animate-pulse-btn cursor-pointer">
+                <a href="#calculator" class="block w-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-center font-bold uppercase tracking-[0.15em] text-xs sm:text-sm py-4 sm:py-5 px-6 transition-all duration-300 rounded-none shadow-[0_4px_30px_rgba(245,158,11,0.4)] animate-pulse-btn cursor-pointer">
                     рассчитать стоимость приёмки
                 </a>
             </div>
